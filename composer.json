@@ -1,0 +1,13 @@
+{
+    "name": "neophp/healt-package",
+    "description": "Health check endpoint and CLI command for NeoPHP",
+    "type": "library",
+    "require": {
+        "php": ">=8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\NeoPHP\\HealtPackage\\": "src/"
+        }
+    }
+}
