@@ -21,8 +21,9 @@ class DiskSpaceHealthCheck implements HealthCheckInterface
         $config = $container->get(ConfigManager::class);
         $minFreePercent = (float)$config->from('health')->get('disk_min_free_percent', 10);
 
-        $free = disk_free_space(\ROOT_DIR);
-        $total = disk_total_space(\ROOT_DIR);
+        $basePath = $container->get('basePath');
+        $free = disk_free_space($basePath);
+        $total = disk_total_space($basePath);
 
         if ($free === false || $total === false || $total === 0) {
             return [
