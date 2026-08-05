@@ -7,7 +7,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Vendor\\NeoPHP\\HealtPackage\\": "src/"
+            "Vendor\\NeoPHP\\HealthPackage\\": "src/"
         }
     }
 }
