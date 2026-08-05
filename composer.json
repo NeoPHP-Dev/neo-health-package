@@ -1,5 +1,5 @@
 {
-    "name": "neophp/healt-package",
+    "name": "neophp/health-package",
     "description": "Health check endpoint and CLI command for NeoPHP",
     "type": "library",
     "require": {
