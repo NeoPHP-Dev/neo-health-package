@@ -27,7 +27,7 @@ class DiskSpaceHealthCheck implements HealthCheckInterface
 
         if ($free === false || $total === false || $total === 0) {
             return [
-                'status' => 'ERROR',
+                'status' => 'error',
                 'message' => 'Unable to read disk space',
                 'duration_ms' => round((microtime(true) - $start) * 1000, 2),
             ];
@@ -37,7 +37,7 @@ class DiskSpaceHealthCheck implements HealthCheckInterface
         $ok = $freePercent >= $minFreePercent;
 
         return [
-            'status' => $ok ? 'OK' : 'ERROR',
+            'status' => $ok ? 'ok' : 'error',
             'message' => $ok ? null : sprintf('Only %.1f%% disk free space.', $freePercent),
             'duration_ms' => round((microtime(true) - $start) * 1000, 2),
         ];

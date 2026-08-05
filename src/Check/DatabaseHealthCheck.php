@@ -23,13 +23,13 @@ class DatabaseHealthCheck implements HealthCheckInterface
             $db->fetch('SELECT 1');
 
             return [
-                'status' => 'OK',
+                'status' => 'ok',
                 'message' => null,
                 'duration_ms' => round((microtime(true) - $start) * 1000, 2),
             ];
         } catch (\Throwable $e) {
             return [
-                'status' => 'ERROR',
+                'status' => 'error',
                 'message' => $e->getMessage(),
                 'duration_ms' => round((microtime(true) - $start) * 1000, 2),
             ];
