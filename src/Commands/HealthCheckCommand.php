@@ -38,7 +38,7 @@ final class HealthCheckCommand extends AbstractCommand
     {
         $project = $input->getOption('project');
 
-        if (!is_dir(ROOT_DIR . "/src/$project")) {
+        if (!is_dir(\ROOT_DIR . "/src/$project")) {
             Output::error("Project '$project' not found.");
             return ExitCode::FAILURE;
         }
